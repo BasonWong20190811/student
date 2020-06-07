@@ -11,6 +11,7 @@
 
     <properties>
         <springframwork.version>5.1.9.RELEASE</springframwork.version>
+        <springframwork.mvc.version>5.1.13.RELEASE</springframwork.mvc.version>
         <slf4j.version>1.7.25</slf4j.version>
         <jackson.version>2.9.8</jackson.version>
         <mybatis.version>3.4.6</mybatis.version>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>${springframwork.version}</version>
+            <version>${springframwork.mvc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
