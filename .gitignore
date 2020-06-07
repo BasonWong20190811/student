@@ -1,0 +1,44 @@
+
+## others
+*.java.hsp
+*.sonarj
+*.sw*
+.springBeans
+bin
+build.sh
+spring-test/test-output/
+.gradle
+argfile*
+
+# Mac os
+.DS_Store
+
+
+
+# build
+classes/
+/build
+buildSrc/build
+/spring-*/build
+/src/asciidoc/build
+target/
+/disconf/
+/span/
+/logs/
+
+# Eclipse artifacts, including WTP generated manifests
+.settings
+.classpath
+.project
+spring-*/src/main/java/META-INF/MANIFEST.MF
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+*.log
+.idea
+out
+test-output
+atlassian-ide-plugin.xml
+.gradletasknamecache
