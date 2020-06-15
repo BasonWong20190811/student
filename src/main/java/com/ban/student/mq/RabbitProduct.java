@@ -30,9 +30,20 @@ public class RabbitProduct {
         //将交换机和队列绑定起来，通过路由键
         channel.queueBind ( QUEUE_NAME ,  EXCHANGE_NAME , ROUTING_KEY) ;
         String message="hello world";
-        channel.basicPublish(EXCHANGE_NAME,ROUTING_KEY, MessageProperties.TEXT_PLAIN,message.getBytes());
-        channel.close();
-        connection.close();
+        try {
+            channel.txSelect();
+            channel.basicPublish(EXCHANGE_NAME,ROUTING_KEY, MessageProperties.TEXT_PLAIN,message.getBytes());
+            int a = 1/0;
+            channel.txCommit();
+        }catch (Exception e){
+            System.out.println(e);
+            channel.txRollback();
+        }finally {
+            channel.close();
+            connection.close();
+        }
+
+
 
 
     }

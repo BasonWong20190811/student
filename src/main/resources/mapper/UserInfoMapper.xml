@@ -5,4 +5,16 @@
         select id,user_name,password from user_info
     </select>
 
+    <select id="selectPeriod" resultType ="java.util.HashMap">
+            select DISTINCT period from  at_fixedassets_periodversion
+    </select>
+
+    <update id="createPeriod" parameterType ="Map">
+           create table ${table} like at_fixedassets_periodversion
+    </update>
+
+    <insert id="insertPeriod"  parameterType="Map">
+        INSERT INTO ${table}(`accentity`, `busiaccbook`, `period`, `periodid`, `assetid`, `calculateid`, `code`, `assetcode`, `name`, `specification`, `category`, `addway`, `usagestate`, `usedepredept`, `managedepredept`, `location`, `begintime`, `status`, `initflag`, `project`, `auditstatus`, `voucherstatus`, `user`, `custodian`, `accruedoriginalvalue`, `depreciationmethod`, `impairment`, `extractedperiod`, `netvalue`, `scrapvalue`, `scrapvaluerate`, `fcoriginalvalue`, `exchangerate`, `depreciation`, `monthdepreciationrate`, `monthdepreciationvalue`, `yeardepreciation`, `lifemonth`, `addedtax`, `taxrate`, `isDepreciation`, `currency`, `id`, `pubts`, `tenant_id`, `create_time`, `create_date`, `modify_time`, `modify_date`, `creator`, `modifier`, `auditor`, `audit_time`, `audit_date`, `depreciationflag`, `creatorId`, `modifierId`, `auditorId`, `lastperiod`, `realoriginalvalue`, `addoriginalvalue`, `reduceoriginalvalue`, `createassetdate`, `adddepreciation`, `reducedepreciation`, `initoriginalvalue`, `initdepreciation`, `disposalflag`, `initimpairment`, `addimpairment`, `reduceimpairment`, `realdepreciation`, `realimpairment`, `newcreateflag`, `isfirstperiod`, `moredepartment`, `depreciationMethodPath`, `depreciationstatus`, `natCurrency`, `categoryParentId`, `totalworkload`, `existingworkload`, `monthworkload`, `isinherited`, `realdepreciationmethod`, `reallifemonth`, `realtotalworkload`, `realscrapvaluerate`, `realcategory`, `accpurpose`, `lastmonthdepreciationvalue`, `netamount`, `amount`, `lastoriginalvalue`, `halfadd`, `unitdepreciation`, `isupdate`, `initcategory`, `initusedepredept`, `initproject`, `initmanagedepredept`, `deptproportion`, `dept_proportion`, `fixedstatus`, `doubleperiod`, `yearbeginvalue`, `lastmonthdepreciationrate`, `halfperiod`, `allperiod`, `sumyearperiod`, `doublelinevalue`, `sumyeardeprevalue`, `moredeptname`, `disposalDepre`, `disposaloriginalvalue`, `disposaldepreciation`, `disposalimpairment`)
+select * from at_fixedassets_periodversion where period =#{period};
+    </insert>
 </mapper>
